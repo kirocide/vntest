@@ -4,7 +4,7 @@ const backlogDiv = document.getElementById('backlog');
 const script = [
   "First line of dialogue.",
   "This is the second line.",
-  "And heres another...",
+  "And here's another...",
 ];
 
 let index = 0;
@@ -71,4 +71,5 @@ document.getElementById('skipBtn').onclick = () => {
 document.getElementById('backlogBtn').onclick = () => {
   backlogDiv.style.display = backlogDiv.style.display === 'none' ? 'block' : 'none';
 };
+
 
