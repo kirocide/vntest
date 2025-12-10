@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('placeholderbg.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+#character {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 437px;
+  height: 560px;
+  background-image: url('FinalColoredSprite1Agitated.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  pointer-events: none;
+}
+
+#textbox {
+  position: fixed;
+  bottom: 0%; /* raises textbox higher */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; /* slightly smaller so it doesn’t touch edges */
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  min-height: 140px; /* enough for ~4 lines of text */
+}
+
+#buttons {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.vn-btn {
+  width: 120px;  /* adjust if needed */
+  height: auto;
+  cursor: pointer;
+  user-select: none;
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+/* Hover: slightly darker */
+.vn-btn:hover {
+  filter: brightness(85%);
+  transform: scale(0.97);
+}
+
+/* Active: darker + slight press effect */
+.vn-btn:active {
+  filter: brightness(70%);
+  transform: scale(0.93);
+}
+
+
+#backlog {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 300px;
+  height: 400px;
+  overflow-y: auto;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  display: none;
+  border-radius: 10px;
+}
