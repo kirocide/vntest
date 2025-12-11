@@ -2,10 +2,12 @@ const textElement = document.getElementById('text');
 const backlogDiv = document.getElementById('backlog');
 
 const script = [
-  "First line of dialogue.",
-  "This is the second line.",
-  "And here's another...",
+  "Hey...",
+  "So what're you doing in here anyways!?",
+  "Whatever... do you need something?",
 ];
+
+const character = document.getElementById('character');
 
 let index = 0;
 let autoMode = false;
@@ -35,6 +37,14 @@ function nextLine() {
 
   const line = script[index];
   index++;
+
+  //temporary itll be changed again w/ different expressions
+  if (index === 2) {
+    character.style.backgroundImage = "url('FinalColoredSprite1Agitated.png')";
+  } else if (index === 3) {
+    character.style.backgroundImage = "url('NeutralExpression.png')";
+  }
+
 
   if (skipMode) {
     textElement.textContent = line;
@@ -71,5 +81,3 @@ document.getElementById('skipBtn').onclick = () => {
 document.getElementById('backlogBtn').onclick = () => {
   backlogDiv.style.display = backlogDiv.style.display === 'none' ? 'block' : 'none';
 };
-
-
