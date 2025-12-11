@@ -23,25 +23,26 @@ body {
   right: 0;
   width: 437px;
   height: 560px;
-  background-image: url('FinalColoredSprite1Agitated.png');
+  background-image: url('NeutralExpression.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom right;
   pointer-events: none;
+  transition: background-image 0.1s ease;
 }
 
 #textbox {
   position: fixed;
-  bottom: 0%; /* raises textbox higher */
+  bottom: 0%; /* for textbox */
   left: 50%;
   transform: translateX(-50%);
-  width: 90%; /* slightly smaller so it doesn’t touch edges */
+  width: 90%; /* width */
   padding: 24px;
   background: rgba(0, 0, 0, 0.4);
   color: white;
   font-size: 20px;
   border-radius: 10px;
-  min-height: 140px; /* enough for ~4 lines of text */
+  min-height: 140px; /* adjust for size */
 }
 
 #buttons {
