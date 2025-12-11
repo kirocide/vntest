@@ -9,6 +9,14 @@ const script = [
 
 const character = document.getElementById('character');
 
+const TYPING_SPEED = 30;
+
+//add to this for new ones
+const EXPRESSIONS = {
+  neutral: "url('NeutralExpression.png')",
+  agitated: "url('FinalColoredSprite1Agitated.png')"
+};
+
 let index = 0;
 let autoMode = false;
 let skipMode = false;
@@ -28,7 +36,7 @@ function typeLine(line) {
       addToBacklog(line);
       if (autoMode) nextLine();
     }
-  }, 30);
+  }, TYPING_SPEED);
 }
 
 function nextLine() {
@@ -40,10 +48,11 @@ function nextLine() {
 
   //temporary itll be changed again w/ different expressions
   if (index === 2) {
-    character.style.backgroundImage = "url('FinalColoredSprite1Agitated.png')";
+    character.style.backgroundImage = EXPRESSIONS.agitated;
   } else if (index === 3) {
-    character.style.backgroundImage = "url('NeutralExpression.png')";
+    character.style.backgroundImage = EXPRESSIONS.neutral;
   }
+
 
 
   if (skipMode) {
@@ -57,14 +66,16 @@ function nextLine() {
 }
 
 function addToBacklog(line) {
-  const entry = document.createElement('div');
-  entry.textContent = line;
-  backlogDiv.appendChild(entry);
+  backlogDiv.insertAdjacentHTML("beforeend", `<div>${line}</div>`);
 }
 
-document.body.addEventListener('click', () => {
+function handleAdvance() {
   if (!typing && !autoMode && !skipMode) nextLine();
-});
+}
+
+document.body.addEventListener('click', handleAdvance);
+
+
 
 document.getElementById('autoBtn').onclick = () => {
   autoMode = !autoMode;
