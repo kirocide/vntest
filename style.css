@@ -1,8 +1,15 @@
+@font-face {
+    font-family: "Century";
+    src: url("CenturyRegular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  font-family: Arial, sans-serif;
+  font-family: "Century", sans-serif;
 }
 
 #background {
